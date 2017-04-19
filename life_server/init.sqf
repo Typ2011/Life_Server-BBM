@@ -9,7 +9,7 @@
     Description:
     Initialize the server and required systems.
 */
-private ["_dome","_rsb","_timeStamp","_extDBNotLoaded","_uhr","_zeit","_Amyf_Zeit","_tag","_minute","_monat","_std"];
+private ["_dome","_rsb","_timeStamp","_extDBNotLoaded"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -212,20 +212,6 @@ life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
 
 // Sharing the point of attachment with all players.
 publicVariable "life_attachment_point";
-
-//StatusBar
-while {true} do 
-{
-	_uhr = "extDB3" callExtension "9:TIME:1";
-	_zeit = call compile (_uhr) select 1;
-	_std = if (_zeit select 3 < 10) then {format ["0%1",_zeit select 3]} else {format ["%1",_zeit select 3]};
-	_minute = if (_zeit select 4 < 10) then {format ["0%1",_zeit select 4]} else {format ["%1",_zeit select 4]};
-	_tag = if (_zeit select 2 < 10) then {format ["0%1",_zeit select 2]} else {format ["%1",_zeit select 2]};
-	_monat = if (_zeit select 1 < 10) then {format ["0%1",_zeit select 1]} else {format ["%1",_zeit select 1]};
-	_Amyf_zeit = [_std,_minute,_tag,_monat,_zeit select 0]; // std, min, tag , monat , jahr
-	publicVariable "_Amyf_zeit";
-	sleep 60;
-};
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
