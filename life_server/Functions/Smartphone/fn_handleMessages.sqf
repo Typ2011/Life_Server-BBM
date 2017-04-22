@@ -39,4 +39,7 @@ case 0: { if(isNULL _target) exitWith {};
  //adminMsgAll 
  case 5: {[_msg,name _player,4] remoteExec ["TON_fnc_clientMessage",0];
  };
+ //policeMsgAll 
+ case 6: {[_msg,name _player,6] remoteExec ["TON_fnc_clientMessage",0];
+ };
 };

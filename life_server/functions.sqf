@@ -238,10 +238,7 @@ compileFinal "
  _msg = ctrlText 888894;
  if(_msg == """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
 
-
-
-
- [_msg,name player,6] remoteExecCall [""TON_fnc_clientMessage"",-2];
+ [_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
  [] call life_fnc_cellphone;
  hint format[""gesendete Rundfunknachricht: %1"",_msg];
  ctrlShow[3023,true];
