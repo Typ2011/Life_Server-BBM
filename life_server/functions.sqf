@@ -235,7 +235,7 @@ compileFinal "
  if((call life_coplevel) < 2) exitWith {hint ""Du bist dazu nicht berechtigt!"";};
  private[""_msg"",""_from""];
  ctrlShow[3023,false];
- _msg = ctrlText 3003;
+ _msg = ctrlText 888894;
  if(_msg == """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
 
 

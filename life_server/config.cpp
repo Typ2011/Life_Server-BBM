@@ -112,6 +112,12 @@ class CfgFunctions {
             class setPlayTime {};
             class getPlayTime {};
         };
+		
+		class Smartphone {
+			file = "\life_server\Functions\Smartphone";
+			class handleMessages {};
+			class msgRequest {};
+		};
     };
 };
 
